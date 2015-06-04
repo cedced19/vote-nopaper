@@ -1,0 +1,11 @@
+<h1>Administration</h1>
+<div class="form-group has-success">
+    <input type="text" class="form-control floating-label" ng-model="new" placeholder="Name">
+    <button type="submit" class="btn btn-primary" ng-click="add()">Add a new participant</button>
+</div>
+
+<h2>Participants</h2>
+<ul>
+    <li ng-repeat="item in items | orderBy:'count':true">{{item.name}}: {{item.count}} <i class="mdi-action-delete" ng-click="remove(item);"></i></li>
+</ul>
+<a class="btn btn-fab btn-material-grey-200" href="#/"><i class="mdi-action-home"></i></a>

@@ -1,0 +1,14 @@
+<h1>Vote with no paper</h1>
+<p>
+    <b>Use-case:</b>
+    At a open doors day, you want people to vote for the best bridge, then you will do a ballot box, and papers that you will have to read after.  
+    Now, you will use this software and spend only two or three minutes, to configure and read the voting system.
+</p>
+<h2>Participants</h2>
+<div class="form-group has-success">
+    <input type="text" class="form-control floating-label" ng-model="search" placeholder="Search">
+</div>
+<ul>
+    <li ng-repeat="item in items | filter:search">{{item.name}} <i green class="mdi-content-add" ng-click="increments(item);"></i></li>
+</ul>
+<a class="btn btn-fab btn-material-grey-200" href="#/admin"><i class="mdi-content-create"></i></a>
