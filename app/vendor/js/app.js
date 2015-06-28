@@ -20,6 +20,7 @@ angular.module('VoteNoPaper', ['ngRoute'])
         link: function(scope, element, attrs) {
             $(element).on('click', function() {
                 $(element).addClass('green');
+                $('.modal').modal('show');
                 setTimeout(function () {
                     $(element).removeClass('green');
                 }, 1000);
@@ -58,5 +59,7 @@ angular.module('VoteNoPaper', ['ngRoute'])
     };
     $scope.removeFile = function () {
         filesystem.remove();
+        $scope.items = [];
+        $scope.new = '';
     }; 
 }]);

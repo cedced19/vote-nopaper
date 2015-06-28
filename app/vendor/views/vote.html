@@ -1,7 +1,7 @@
 <h1>Vote with no paper</h1>
 <p>
     <b>Use-case:</b>
-    At a open doors day, you want people to vote for the best bridge, then you will do a ballot box, and papers that you will have to read after.  
+    At a open doors day, you want people to vote for the best bridge, then you will do a ballot box, and papers that you will have to read after.
     Now, you will use this software and spend only two or three minutes, to configure and read the voting system.
 </p>
 <h2>Participants</h2>
@@ -12,3 +12,16 @@
     <li ng-repeat="item in items | filter:search">{{item.name}} <i green class="mdi-content-add" ng-click="increments(item);"></i></li>
 </ul>
 <a class="btn btn-fab btn-material-grey-200" href="#/admin"><i class="mdi-content-create"></i></a>
+<div class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Information</h4>
+            </div>
+            <div class="modal-body">Thank you for your participation!</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

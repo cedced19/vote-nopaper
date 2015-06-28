@@ -6,7 +6,6 @@ var builder = require('node-webkit-builder'),
     useref = require('gulp-useref'),
     gulpif = require('gulp-if'),
     uglify = require('gulp-uglify'),
-    uncss = require('gulp-uncss'),
     minifyCss = require('gulp-minify-css'),
     htmlmin = require('gulp-htmlmin'),
     fs = require('fs');
@@ -40,23 +39,13 @@ gulp.task('html', function () {
         .pipe(gulp.dest('minified'));
 });
 
-gulp.task('css', ['html'], function () {
-    return gulp.src('minified/vendor/styles.css')
-        .pipe(uncss({
-            html: ['minified/index.html', 'minified/vendor/views/vote.html', 'minified/vendor/views/admin.html']
-        }))
-        .pipe(minifyCss())
-        .pipe(gulp.dest('minified/vendor/'));
-});
-
-gulp.task('minify', ['css', 'copy-fonts', 'copy-favicon', 'copy-package']);
+gulp.task('minify', ['html', 'copy-fonts', 'copy-favicon', 'copy-package']);
 
 gulp.task('nw', ['minify'], function () {
 
     var nw = new builder({
         files: ['./minified/**/**', '!./minified/vendor/css/*.css0'],
-        platforms: ['win32', 'osx32', 'osx64', 'linux32', 'linux64'],
-        winIco: './favicon.ico'
+        platforms: ['osx32', 'osx64', 'linux32', 'linux64']
     });
 
     nw.on('log', function (msg) {
@@ -87,7 +76,7 @@ gulp.task('nw-win', ['minify'], function () {
 
 
 gulp.task('dist-win', ['nw-win'], function () {
-    return gulp.src('build/rename-date/win32/**/**')
+    return gulp.src('build/vote-nopaper/win32/**/**')
         .pipe(zip('Windows.zip'))
         .pipe(gulp.dest('dist/'));
 });
@@ -116,4 +105,4 @@ gulp.task('dist-linux64', ['nw'], function () {
         .pipe(gulp.dest('dist/'));
 });
 
-gulp.task('default', ['dist-win', 'dist-osx64', 'dist-osx32', 'dist-linux64', 'dist-linux32']);
+gulp.task('default', ['dist-osx64', 'dist-osx32', 'dist-linux64', 'dist-linux32']);

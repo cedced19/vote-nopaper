@@ -2,7 +2,7 @@
   "name": "vote-nopaper",
   "main": "index.html",
   "version": "0.0.0",
-  "single-instance": false,
+  "single-instance": true,
   "window": {
     "title": "Rename date",
     "icon": "favicon.png",
