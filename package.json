@@ -1,7 +1,7 @@
 {
   "name": "vote-nopaper",
   "version": "0.0.0",
-  "homepage": "https://github.com/cedced19/vote-nopaper/desktop",
+  "homepage": "https://github.com/cedced19/vote-nopaper",
   "bugs": "https://github.com/cedced19/vote-nopaper/issues",
   "author": {
     "name": "Cédric",
@@ -10,11 +10,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/cedced19/rename-date.git"
+    "url": "git://github.com/cedced19/vote-nopaper.git"
   },
   "devDependencies": {
     "colors": "1.0.3",
-    "gulp": "^3.8.10",
+    "gulp": "^3.9.0",
     "gulp-clean": "^0.3.1",
     "gulp-htmlmin": "^1.1.1",
     "gulp-if": "^1.2.5",
